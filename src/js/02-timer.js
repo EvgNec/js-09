@@ -1,9 +1,11 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import Notiflix from 'notiflix';
 
 const myInput = document.getElementById('datetime-picker');
-// myInput.value=Date.now();
+myInput.value=Date.now();
 const btnStart = document.querySelector('button[data-start]');
+let isActive = false;
 
 flatpickr("#datetime-picker",{
     enableTime: true,
@@ -19,7 +21,9 @@ flatpickr("#datetime-picker",{
 btnStart.addEventListener('click', startTimer);
 
 function startTimer() {
- console.log("myInput.value", myInput.value)
+    if (isActive) {return;}
+    console.log("myInput.value", myInput.value)
+    isActive = true;
 }
 
 
