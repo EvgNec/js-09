@@ -1,0 +1,213 @@
+<html>
+
+<body
+    style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+    <div
+        style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+                <td align="center" valign="top" style="padding:20px 0 20px 0">
+                    <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" width="780"
+                        style="border:1px solid #E0E0E0;">
+                        <!-- [ header starts here] -->
+                        <tr>
+                            <td valign="top">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td valign="top">
+                                            <a href="{{store url=""}}">
+                                                <img src="{{var logo_url}}" alt="{{var logo_alt}}" border="0" />
+                                            </a>
+                                        </td>
+                                        <td valign="center">
+                                            <table style="margin-left: auto;">
+                                                <tr>
+                                                    <td style="padding-left: 4px;">
+                                                        <a href="https://www.facebook.com/NowyStylGroupKZ"
+                                                            target="_blank">
+                                                            <img src="{{store url=""}}media/email/social/fb.png">
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding-left: 4px;">
+                                                        <a href="https://www.instagram.com/nowystyl.kz/"
+                                                            target="_blank">
+                                                            <img src="{{store url=""}}media/email/social/insta.png">
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding-left: 4px;">
+                                                        <a href="https://www.t.me/ns_kaz" target="_blank">
+                                                            <img src="{{store url=""}}media/email/social/tg.png">
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding-left: 4px;">
+                                                        <a href="viber://pa?chatURI=nowystyl-kz" target="_blank">
+                                                            <img src="{{store url=""}}media/email/social/vb.png">
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding-left: 4px;">
+                                                        <a href="https://www.youtube.com/channel/UCki_oruAaGFbf3jjmF9gxZg/videos/"
+                                                            target="_blank">
+                                                            <img src="{{store url=""}}media/email/social/yb.png">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- [ middle starts here] -->
+                        <tr>
+                            <td style="padding: 0 13px 35px;">
+                                <table cellspacing="0" cellpadding="0"
+                                    style="width: 100%; border-collapse: collapse; border-collapse: collapse; border-spacing: 0;">
+                                    <tr style="text-align: center;">
+                                        <td style="width: 33.33%;">
+                                            <a href="{{store url='new.html'}}"
+                                                style="background: #1d4d9b; color: #fff; padding: 15px; border-right: 1px solid #496eac; font-size: 16px; text-decoration: none; display: block;">
+                                                Новинки
+                                            </a>
+                                        </td>
+                                        <td style="width: 33.33%;">
+                                            <a href="{{store url='ns-express.html'}}"
+                                                style="background: #1d4d9b; color: #fff; padding: 15px; border-right: 1px solid #496eac; font-size: 16px; text-decoration: none; display: block;">
+                                                NS Express
+                                            </a>
+                                        </td>
+                                        <td style="width: 33.33%;">
+                                            <a href="{{store url='all-actions.html'}}"
+                                                style="background: #1d4d9b; color: #fff; padding: 15px; border-right: 1px solid #496eac; font-size: 16px; text-decoration: none; display: block;">
+                                                Акции
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" style="padding: 10px 30px;">
+                                <h1 style="font-size:22px; font-weight:normal; line-height:22px; margin:0 0 30px;">
+                                    Хорошие новости!</h1>
+                                <p style="font-size: 16px; margin: 0 0 35px;">
+                                    Заказ <b style="color: #54c27b;">успешно</b> оформлен и отправлен на обработку.
+                                </p>
+                                <div style="border: 5px solid #1d4d9b; padding: 30px; margin-bottom: 40px;">
+                                    <p style="margin: 0 0 20px; padding-right: 10px;">
+                                        Следить за статусом выполнения вашего заказа вы можете в вашем
+                                        личном кабинете.
+                                    </p>
+                                    <a href="{{store url='sales/order/view/'}}order_id/{{var order.id}} "
+                                        style="background: #1d4d9b; color: #fff; padding: 15px 30px; border-right: 1px solid #496eac; font-size: 14px; text-decoration: none; display: inline-block;"
+                                        target="_blanck">
+                                        Посмотреть заказ в личном кабинете
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0 30px;">
+                                <p style="font-size:18px; font-weight:normal; margin:0 0 20px;">
+                                    <strong>Ваш заказ #{{var order.increment_id}}</strong>
+                                    <small>(Оформлено {{var order.getCreatedAtFormated('long')}})</small>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0;">
+                                <table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td align="left" width="100%" bgcolor="#eaeaea"
+                                                style="font-size:16px; padding:5px 30px 6px; line-height:1em;">
+                                                Информация о доставке:</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="font-size:14px; padding:10px 30px 25px;">
+                                                {{var order.getBillingAddress().format('html')}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" width="100%" bgcolor="#eaeaea"
+                                                style="font-size:16px; padding:5px 30px 6px; line-height:1em;">Метод
+                                                оплаты:</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="font-size:14px; padding:10px 30px 25px;">
+                                                {{var payment_html}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {{depend order.getIsNotVirtual()}}
+                                <table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td align="left" width="100%" bgcolor="#eaeaea"
+                                                style="font-size:16px; padding:5px 30px 6px; line-height:1em;">Способ
+                                                доставки</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" style="font-size:14px; padding:10px 30px 25px;">
+                                                {{var order.getShippingAddress().format('html')}}
+                                                <br>
+                                                {{var order.getShippingDescription()}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" width="100%" bgcolor="#eaeaea"
+                                                style="font-size:16px; padding:5px 30px 6px; line-height:1em;">Выбранный
+                                                товар</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {{/depend}}
+                                {{layout handle="sales_email_order_items" order=$order}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-top: 1px solid #ddd;">
+                                <table cellspacing="0" cellpadding="0" border="0" style="width: 100%; margin: 10px 0;">
+                                    <tr>
+                                        <td style="width: 115px; padding: 10px 20px;">
+                                            <img src="{{store url=""}}media/email/support.png">
+                                        </td>
+                                        <td>
+                                            <h3
+                                                style="font-size: 22px; line-height: 25px; font-weight: 400; margin: 0 0 10px;">
+                                                По всем вопросам для Вас работает наш <br> контакт-центр
+                                            </h3>
+                                            <p style="margin: 0 0 10px;">
+                                                ПН – ПТ с 9:00 до 18:00 по телефону <a
+                                                    href="tel:{{config path='general/store_information/phone'}}"
+                                                    style="color: #000; text-decoration: none; font-weight: 600;">{{config
+                                                    path='general/store_information/phone'}}</a>.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#f9f9f9" align="center" style="text-align:center; padding: 40px 10px;">
+                                <center style="display: block; max-width: 520px; margin: 0 auto;">
+                                    <p style="margin: 0 0 20px">
+                                        Что бы получать больше полезной информации,
+                                        подписывайтесь на наш <a href="https://www.t.me/ns_kaz" target="_blank"
+                                            style="color: #00afe7;">Telegram</a> канал, там Вас будут ждать
+                                        актуальные новости, акции и новинки.
+                                    </p>
+                                    <p style="font-size: 18px;">
+                                        Спасибо за оформление заказа!
+                                    </p>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
