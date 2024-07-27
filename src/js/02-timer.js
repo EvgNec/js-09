@@ -66,7 +66,10 @@ console.log(`Залишилося ${timeRemaining.days} днів, ${timeRemainin
 
 
 const myR = document.querySelector('.js-timer');
-
+const timerDays = document.querySelector('span.value[data-days]');
+const timerHours = document.querySelector('span.value[data-hours]');
+const timerMinutes = document.querySelector('span.value[data-minutes]');
+const timerSeconds = document.querySelector('span.value[data-seconds]');
 btnStart.addEventListener('click', startR);
 function startR() {
     setInterval(recl, 1000);
@@ -77,5 +80,9 @@ function recl() {
     console.log('2');
     timeRemaining = calculateTimeToDate(targetDate);
     myR.textContent = `Залишилося ${timeRemaining.days} днів, ${timeRemaining.hours} годин, ${timeRemaining.minutes} хвилин, ${timeRemaining.seconds} секунд до цільової дати.`;
-}
 
+timerDays.textContent = `${timeRemaining.days}`;
+timerHours.textContent = `${timeRemaining.hours}`;
+timerMinutes.textContent = `${timeRemaining.minutes}`;
+timerSeconds.textContent = `${timeRemaining.seconds}`;
+};
