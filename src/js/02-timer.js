@@ -26,7 +26,7 @@ flatpickr("#datetime-picker",{
         }],
 });
 
-btnStart.addEventListener('click', startTimer);
+// btnStart.addEventListener('click', startTimer);
 
 function startTimer() {
     if (isActive) {return;}
@@ -60,10 +60,22 @@ function calculateTimeToDate(targetDate) {
         seconds: seconds
     };
 }
-
 // Викликаємо функцію і виводимо результат
-const timeRemaining = calculateTimeToDate(targetDate);
+let timeRemaining = calculateTimeToDate(targetDate);
 console.log(`Залишилося ${timeRemaining.days} днів, ${timeRemaining.hours} годин, ${timeRemaining.minutes} хвилин, ${timeRemaining.seconds} секунд до цільової дати.`);
 
 
+const myR = document.querySelector('.js-timer');
+
+btnStart.addEventListener('click', startR);
+function startR() {
+    setInterval(recl, 1000);
+        console.log('1');
+}
+ 
+function recl() {
+    console.log('2');
+    timeRemaining = calculateTimeToDate(targetDate);
+    myR.textContent = `Залишилося ${timeRemaining.days} днів, ${timeRemaining.hours} годин, ${timeRemaining.minutes} хвилин, ${timeRemaining.seconds} секунд до цільової дати.`;
+}
 
