@@ -1,11 +1,15 @@
 // function createPromise(position, delay) {
+//--  return new Promise(function (resolve, reject) {
 //   const shouldResolve = Math.random() > 0.3;
 //   if (shouldResolve) {
 //     // Fulfill
+//-- resolve('good');
 //   } else {
 //     // Reject
+//-- reject('bad');
 //   }
-// }
+    // }
+  //--});
 
 // const fetchPockemon = (id, onSuccess, onErrror) => {
 // fetch(`https://pokeapi.co./api/v2/pokemon/${id}`)
