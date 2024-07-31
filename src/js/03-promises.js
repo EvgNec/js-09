@@ -11,6 +11,11 @@
     // }
   //--});
 
+  //-- createPromise(1, 1000)
+  //--.then(result => console.log(result))
+  //--.catch(err => console.log(err))
+  
+  
 // const fetchPockemon = (id, onSuccess, onErrror) => {
 // fetch(`https://pokeapi.co./api/v2/pokemon/${id}`)
 //   .then(r => r.json())
@@ -30,3 +35,30 @@ function onFetchSuccess(pokemon) {
 };
 
 function onFetchError(err) { console.log(err); };
+
+
+const horses = [
+  'Rast', 'West', 'First', 'Last','Lucky'
+]
+console.log('Start RUN');
+
+// run('Test').then(x => console.log(x));
+const promises = horses.map(horse => run(horse));
+
+Promise.race(promises).then(x => console.log('Fast horses ', x));
+Promise.race(promises).then(({ horse, time }) => console.log(`Fast horses ${horse} it time ${time}`));
+
+Promise.all(promises).then(x => x.map(({ horse, time }) => console.log(`Name horses ${horse} it time ${time}`)));
+
+function run(horse) {
+  return new Promise((resolve, reject) => {
+    const time = getRandomTime(2000, 3500);
+    setTimeout(() => {
+      resolve({ horse, time });
+    }, time);
+    })
+  }
+
+function getRandomTime(min, max) { 
+  return Math.round(Math.random() * (max - min) + min);
+}
