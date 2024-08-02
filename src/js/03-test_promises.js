@@ -22,6 +22,33 @@
 //   .then(pokemon => { onFetchSuccess(pokemon) })
 //   .catch(error => { onFetchError(err) });
 // }
+import Notiflix from 'notiflix';
+
+Notiflix.Notify.success('Sol lucet omnibus');
+
+Notiflix.Notify.failure('Qui timide rogat docet negare');
+
+Notiflix.Notify.warning('Memento te hominem esse');
+
+Notiflix.Notify.info('Cogito ergo sum');
+
+Notiflix.Confirm.show(
+  'Notiflix Confirm',
+  'Do you agree with me?',
+  'Yes',
+  'No',
+  function okCb() {
+    alert('Thank you.');
+  },
+  function cancelCb() {
+    alert('If you say so...');
+  },
+  {
+    width: '320px',
+    borderRadius: '8px',
+    // etc...
+  },
+);
 
 const fetchPockemon = (id) => {
 return fetch(`https://pokeapi.co./api/v2/pokemon/${id}`).then(r => r.json())
@@ -62,3 +89,5 @@ function run(horse) {
 function getRandomTime(min, max) { 
   return Math.round(Math.random() * (max - min) + min);
 }
+
+

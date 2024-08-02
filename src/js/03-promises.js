@@ -1,9 +1,10 @@
 import Notiflix from 'notiflix';
 
 const refs = {
-stBtn: document.querySelector('[data-dsdd]'),
-
-
+  delayInp: document.querySelector("input[name=delay]"),
+  stepInp: document.querySelector("input[name=step]"),
+  amountInp: document.querySelector("input[name=amount]"),
+  formSubmit: document.querySelector(".form"),
 }
 
 Notiflix.Notify.success('Sol lucet omnibus');
