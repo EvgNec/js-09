@@ -13,28 +13,23 @@ refs.form.addEventListener('submit', e => {
   let delay = +form['delay'].value;
   const amount = +form['amount'].value;
   const step = +form['step'].value;
-  let position = 0;
-  for (let i = 0; i < amount; i++) {
-    console.log('delay', delay);
-    position += 1;
+  for (let i = 1; i <= amount; i++) {
     const firstDelay = delay;
     let newDelay = (delay += step);
-    createPromise(position, firstDelay, newDelay)
-      .then(({ position, newDelay }) => {
+    createPromise(i, firstDelay, newDelay)
+      .then(({ position, newDelay }) => {        
         setTimeout(() => {
-          Notiflix.Notify.success(
-            `✅ Fulfilled promise ${position} in ${newDelay}ms`
-          );
+          Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${newDelay}ms`);
         }, newDelay);
       })
       .catch(({ position, newDelay }) => {
         setTimeout(() => {
-          Notiflix.Notify.success(
-            `❌ Rejected promise ${position} in ${newDelay}ms`
-          );
+          Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${newDelay}ms`);
         }, newDelay);
       });
   }
+
+
 });
 
 function createPromise(position, newDelay) {
