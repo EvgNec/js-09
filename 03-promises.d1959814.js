@@ -1,2 +1,0 @@
-console.log("Starting server"),new Promise((function(n,e){setTimeout((function(){console.log("Preparing server..."),n({server:"aws",port:1234,status:"running"})}),2e3)})).then((function(n){return new Promise((function(e,o){setTimeout((function(){n.modified=!0,e(n)}),2e3)}))})).then((function(n){return console.log("Data received",n),n.fromPromise=!0,n})).then((function(n){console.log("Data received2",n)})).catch((function(n){console.log("err",n)})).finally((function(){console.log("finally")}));
-//# sourceMappingURL=03-promises.d1959814.js.map
