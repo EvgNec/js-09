@@ -1,33 +1,38 @@
-  console.log("Starting server")
+console.log('Starting server');
 
 const p = new Promise((resolve, reject) => {
   setTimeout(() => {
-    console.log("Preparing server...");
+    console.log('Preparing server...');
     const backendData = {
       server: 'aws',
       port: 1234,
       status: 'running',
-    }  
-    resolve(backendData)
-   }, 2000)
+    };
+    resolve(backendData);
+  }, 2000);
 });
 
-p.then((data) => {
-  const p2 = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        data.modified = true;
-    resolve(data)
-   }, 2000)
+p.then(data => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      data.modified = true;
+      resolve(data);
+    }, 2000);
+  });
+}).then(clientData => {
+  console.log('Data received', clientData);
+  clientData.fromPromise = true;
+  return clientData;
+})
+  .then(data => {
+    console.log('Data received2', data);
   })
-    p2.then((clientData) => {
-    console.log("Data received", clientData);
- })
- })
-
-
-
-
-
+  .catch(err => {
+    console.log('err', err)
+  })
+  .finally(() => {
+        console.log('finally')
+  })
 // import Notiflix from 'notiflix';
 
 // const refs = {
@@ -47,7 +52,7 @@ p.then((data) => {
 //     const firstDelay = delay;
 //     let newDelay = (delay += step);
 //     createPromise(i, firstDelay, newDelay)
-//       .then(({ position, newDelay }) => {        
+//       .then(({ position, newDelay }) => {
 //         setTimeout(() => {
 //           Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${newDelay}ms`);
 //         }, newDelay);
@@ -58,7 +63,6 @@ p.then((data) => {
 //         }, newDelay);
 //       });
 //   }
-
 
 // });
 
